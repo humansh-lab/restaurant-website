@@ -218,3 +218,93 @@ footer {
 .social-links a:hover {
   color: #b5942e;
 }
+
+
+/* Add this at the end of your existing CSS */
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Navbar */
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 80vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    padding: 0 15px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    padding: 0 15px;
+  }
+
+  /* Menu Section */
+  .menu-item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* About/Reservation Sections */
+  .about, .menu, .reservation {
+    padding: 60px 20px;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  /* Reservation Form */
+  .reservation form {
+    width: 100%;
+  }
+
+  input, button {
+    width: 100% !important;
+  }
+
+  /* Footer */
+  footer {
+    padding: 30px 15px;
+  }
+
+  .social-links a {
+    margin: 0 8px;
+    font-size: 1.2rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    gap: 8px;
+  }
+
+  .menu-item h3 {
+    font-size: 1.3rem;
+  }
+}
