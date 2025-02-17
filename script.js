@@ -1,18 +1,30 @@
-// Toggle Navbar Menu
+// Slideshow functionality
+let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.querySelectorAll(".slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+showSlides(); // Start the slideshow
+
+// Navbar toggle for mobile
 function toggleMenu() {
-    const nav = document.querySelector('header nav ul');
-    nav.classList.toggle('show');
-  }
-  
-  // Smooth Scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      window.scrollTo({
-        top: target.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    });
-  });
-  
+    document.getElementById("nav-links").classList.toggle("show");
+}
+
+// Adding scroll effect for blurry navbar
+window.addEventListener("scroll", function() {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});

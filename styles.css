@@ -23,6 +23,12 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(34, 34, 34, 0.9); /* Darkened on scroll */
+  backdrop-filter: blur(10px); /* Blurry effect */
 }
 
 header .logo {
@@ -58,6 +64,13 @@ nav ul li a {
 nav ul li a:hover {
   background: #ff6600;
   border-radius: 5px;
+}
+
+#menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
 }
 
 /* Hero Section */
@@ -216,10 +229,20 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  nav ul {
+      display: none;
+      text-align: center;
+      padding: 20px;
+  }
+
+  #nav-links.show {
+      display: block;
+  }
+
   .menu-grid {
       grid-template-columns: 1fr 1fr;
   }
-  
+
   .hero h1 {
       font-size: 2rem;
   }
@@ -227,5 +250,9 @@ footer {
   .hero .btn {
       font-size: 1rem;
       padding: 12px 24px;
+  }
+
+  #menu-icon {
+      display: block;
   }
 }
