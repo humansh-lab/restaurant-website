@@ -1,18 +1,42 @@
 // Slideshow functionality
-let slideIndex = 0;
+// Get all the slides
+const slides = document.querySelectorAll('.slideshow .slide');
 
-function showSlides() {
-    let slides = document.querySelectorAll(".slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
+// Set the initial active slide index
+let currentSlide = 0;
+
+// Function to show the next slide
+function nextSlide() {
+    // Remove 'active' class from the current slide
+    slides[currentSlide].classList.remove('active');
+    
+    // Increment the slide index, looping back to the first slide if necessary
+    currentSlide = (currentSlide + 1) % slides.length;
+    
+    // Add 'active' class to the next slide
+    slides[currentSlide].classList.add('active');
 }
 
-showSlides(); // Start the slideshow
+// Function to show the previous slide (optional)
+function prevSlide() {
+    // Remove 'active' class from the current slide
+    slides[currentSlide].classList.remove('active');
+    
+    // Decrement the slide index, looping back to the last slide if necessary
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    
+    // Add 'active' class to the previous slide
+    slides[currentSlide].classList.add('active');
+}
+
+// Automatically change the slides every 5 seconds (5000 ms)
+setInterval(nextSlide, 5000);
+
+// Initialize the first slide as active when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    slides[0].classList.add('active');
+});
+
 
 // Navbar toggle for mobile
 function toggleMenu() {

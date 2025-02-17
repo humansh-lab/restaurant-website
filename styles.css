@@ -74,6 +74,7 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+/* Slideshow Styles */
 .hero {
   position: relative;
   height: 500px;
@@ -91,7 +92,21 @@ nav ul li a:hover {
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
+
+.slideshow .slide.active {
+  opacity: 1;
+}
+
+/* Slideshow transition control */
+@keyframes fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 
 .hero-content {
   position: absolute;
