@@ -12,63 +12,15 @@ body {
   color: #333;
 }
 
-/* Navbar */
-header {
-  background-color: #333;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-
-header .logo {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-header nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-header nav ul li {
-  font-size: 16px;
-}
-
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-header nav ul li a:hover {
-  color: #ff6600;
-}
-
-/* Hamburger Icon */
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
-
-.hamburger i {
-  color: #fff;
-  font-size: 30px;
-}
-
 /* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #333;
   color: white;
-  text-align: center;
 }
 
 .hero .slideshow {
@@ -89,16 +41,20 @@ header nav ul li a:hover {
 }
 
 .hero .hero-content {
-  padding: 150px 20px;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
 }
 
 .hero .hero-content h1 {
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .hero .hero-content p {
   font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .hero .hero-content .btn {
@@ -107,24 +63,7 @@ header nav ul li a:hover {
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-}
-
-/* About Section */
-#about {
-  padding: 80px 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-#about h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#about p {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Menu Section */
@@ -181,12 +120,19 @@ header nav ul li a:hover {
   margin-bottom: 40px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 form input, form button {
   padding: 12px;
   margin: 10px 0;
   border-radius: 5px;
   border: 1px solid #ddd;
   width: 100%;
+  max-width: 400px;
 }
 
 form button {
@@ -212,7 +158,7 @@ footer .social-links a:hover {
   color: #ff6600;
 }
 
-/* Media Queries for Mobile */
+/* Mobile First Design */
 @media screen and (max-width: 768px) {
   header nav ul {
     display: none;
@@ -232,5 +178,14 @@ footer .social-links a:hover {
 
   .hero .hero-content p {
     font-size: 1rem;
+  }
+
+  .hero .hero-content .btn {
+    font-size: 1rem;
+  }
+
+  /* Adjust Reservation Form */
+  form input, form button {
+    width: 90%;
   }
 }
