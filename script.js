@@ -1,4 +1,3 @@
-// Slideshow functionality
 // Get all the slides
 const slides = document.querySelectorAll('.slideshow .slide');
 
@@ -14,18 +13,6 @@ function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     
     // Add 'active' class to the next slide
-    slides[currentSlide].classList.add('active');
-}
-
-// Function to show the previous slide (optional)
-function prevSlide() {
-    // Remove 'active' class from the current slide
-    slides[currentSlide].classList.remove('active');
-    
-    // Decrement the slide index, looping back to the last slide if necessary
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    
-    // Add 'active' class to the previous slide
     slides[currentSlide].classList.add('active');
 }
 

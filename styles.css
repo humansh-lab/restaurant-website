@@ -74,67 +74,75 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
-/* Slideshow Styles */
 .hero {
   position: relative;
-  height: 500px;
-  overflow: hidden;
-}
-
-.slideshow {
-  display: flex;
-  transition: transform 2s ease-in-out;
-}
-
-.slideshow .slide {
+  height: 100vh; /* Ensure the hero section takes up full screen */
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  flex-shrink: 0;
+  overflow: hidden;
+  z-index: 1; /* Ensure the slideshow is behind content */
+}
+
+/* Slideshow Styles */
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Make sure the slideshow is behind the text and button */
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-.slideshow .slide.active {
+.slide.active {
   opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Slideshow transition control */
-@keyframes fade {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-
+/* Hero Content Styles */
 .hero-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: white;
+  z-index: 10; /* Ensure the content stays on top */
 }
 
-.hero h1 {
+.hero-content h1 {
   font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.hero .btn {
-  display: inline-block;
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Button Styles */
+.reserve-btn {
   padding: 15px 30px;
   background-color: #ff6600;
   color: white;
+  font-size: 1.2rem;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
-  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.hero .btn:hover {
+.reserve-btn:hover {
   background-color: #e65c00;
 }
+
 
 /* About Section */
 #about {
