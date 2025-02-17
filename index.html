@@ -13,7 +13,6 @@
   <!-- Navbar -->
   <header>
     <div class="logo">Al-Marsa</div>
-    <button class="menu-toggle"><i class="fas fa-bars"></i></button> <!-- Mobile toggle button -->
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
@@ -22,10 +21,14 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
+    <!-- Background Slideshow -->
     <div class="slideshow">
       <div class="slide" style="background-image: url('./image/pexels-asadphoto-1449773.jpg');"></div>
       <div class="slide" style="background-image: url('./image/pexels-chanwalrus-941861.jpg');"></div>
@@ -39,8 +42,47 @@
     </div>
   </section>
 
-  <!-- Other sections (About, Menu, Reservation, Contact) go here -->
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Al-Marsa offers a luxurious blend of authentic Kuwaiti flavors and modern elegance. Located in the heart of Kuwait City, we provide an unparalleled dining experience for those who appreciate the finest cuisine.</p>
+  </section>
 
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <h2>Our Signature Dishes</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="./image/pexels-iara-melo-558346607-30635716.jpg" alt="Appetizers">
+        <h3>Exquisite Appetizers</h3>
+        <p>Freshly prepared traditional starters.</p>
+      </div>
+      <div class="menu-item">
+        <img src="./image/pexels-joaquin-egea-18193-88923.jpg" alt="Main Course">
+        <h3>Luxury Main Course</h3>
+        <p>Premium cuts & traditional Kuwaiti flavors.</p>
+      </div>
+      <div class="menu-item">
+        <img src="./image/pexels-marta-dzedyshko-1042863-2067396.jpg" alt="Desserts">
+        <h3>Decadent Desserts</h3>
+        <p>End your meal with our chef’s special delights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Section -->
+  <section id="reservation" class="reservation">
+    <h2>Reserve Your Table</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer id="contact">
     <p>Contact Us: +965 1234 5678 | info@almarsa.com</p>
     <div class="social-links">
