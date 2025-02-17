@@ -1,21 +1,20 @@
-// Toggle mobile menu
-document.querySelector(".menu-toggle").addEventListener("click", function() {
-    document.querySelector("header nav ul").classList.toggle("show");
+// Smooth scrolling and active class for links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth'
+      });
+    });
   });
   
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      const offset = 80; // Adjust based on navbar height
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+  // Navbar Toggle for Mobile
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('header nav ul');
   
-      window.scrollTo({ top: targetPosition, behavior: "smooth" });
-  
-      // Remove active class from all links and add to the clicked one
-      document.querySelectorAll("nav ul li a").forEach(link => link.classList.remove("active"));
-      this.classList.add("active");
-    });
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
   
